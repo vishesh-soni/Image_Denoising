@@ -1,0 +1,102 @@
+<!-- image_upload/templates/image_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image List</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5; /* Set off-white background color */
+            font-family: 'Verdana', sans-serif; /* Change font style */
+        }
+
+        nav {
+            background-color: #333; /* Set background color for the navigation bar */
+            padding: 10px; /* Add padding for spacing within the navigation bar */
+            width: 100%; /* Set width to 100% to span the entire row */
+            display: flex; /* Add display flex to keep items in a row */
+            justify-content: flex-start; /* Align navigation items to the start (left) */
+        }
+
+        nav a {
+            color: #fff; /* Set text color for the navigation links */
+            text-decoration: none;
+            margin-right: 15px; /* Add spacing between navigation links */
+            font-weight: bold;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: row; /* Set to row for horizontal alignment */
+            align-items: center;
+            width: 150px; /* Set equal width for the image containers */
+            background-color: #4CAF50; /* Set ChatGPT green color for the tab */
+            border-radius: 10px;
+            padding: 10px; /* Adjust padding for spacing within the tab */
+            margin-bottom: 20px; /* Increase spacing between image containers */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth effect */
+            margin-top: 20px; /* Add spacing between nav bar and image containers */
+            margin-right: 20px; /* Add spacing between image containers */
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff; /* Set white text color */
+            font-size: 1.2em; /* Decrease font size */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle 3D effect to text */
+            transition: color 0.3s ease-in-out; /* Add a color transition effect */
+            margin-bottom: 5px; /* Adjust spacing between text and image */
+        }
+
+        h2:hover {
+            color: #ff6600; /* Change text color on hover */
+        }
+
+        img {
+            width: 100%; /* Set the image width to fill the container */
+            height: auto; /* Maintain aspect ratio */
+            border: 5px solid black; /* Add a solid black border */
+            border-radius: 10px; /* Set border radius */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a 3D effect to images */
+            transition: box-shadow 0.3s ease-in-out; /* Add a box-shadow transition effect */
+        }
+
+        img:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Change box-shadow on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+
+    {% if original_image %}
+    <div class="image-container">
+        <h2>Original Image</h2>
+        <img src="data:image/png;base64,{{ original_image }}" alt="Original Image">
+    </div>
+    {% endif %}
+
+    {% if noisy_image %}
+    <div class="image-container">
+        <h2>Noisy Image</h2>
+        <img src="data:image/png;base64,{{ noisy_image }}" alt="Noisy Image">
+    </div>
+    {% endif %}
+
+    {% if reshaped_pred %}
+    <div class="image-container">
+        <h2>Denoised Image</h2>
+        <img src="data:image/png;base64,{{ reshaped_pred }}" alt="Denoised Image">
+    </div>
+    {% endif %}
+
+</body>
+</html>

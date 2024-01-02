@@ -1,0 +1,90 @@
+<!-- image_upload/templates/image_upload/image_upload.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DENOISING IMAGE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Set a light background color */
+            margin: 20px;
+        }
+
+        .main-container {
+            max-width: 800px; /* Increased the width of the main container to 2x */
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-container {
+            flex: 1; /* Take up 50% of the width in a flex container */
+            background-color: #fff; /* Set form background color */
+            padding: 40px; /* Increased the padding to 2x */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+            margin-bottom: 40px; /* Increased the margin to 2x */
+        }
+
+        .image-container {
+            flex: 1; /* Take up 50% of the width in a flex container */
+            background-color: #4caf50; /* Set image container background color to green */
+            padding: 20px; /* Decreased the padding to 1x */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+            margin-bottom: 20px;
+            color: #fff; /* Set text color to white */
+        }
+
+        h2 {
+            color: #fff; /* Set heading color to white */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555; /* Set label color */
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50; /* Set green background color */
+            color: #fff; /* Set white text color */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darken the background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="form-container">
+            <div class="image-container">
+                <h2>DENOISING IMAGE</h2>
+                <!-- Add your denoising image or preview here -->
+                <!-- Example: <img src="path/to/denoised_image.jpg" alt="Denoised Image"> -->
+            </div>
+            <h2>DENOISING IMAGE</h2>
+            <form action="list" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>
