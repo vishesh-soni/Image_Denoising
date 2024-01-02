@@ -4,6 +4,4 @@ numpy
 opencv_contrib_python
 opencv_python
 Pillow
-Pillow
 scipy
-tensorflow
