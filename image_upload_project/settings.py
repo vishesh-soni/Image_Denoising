@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'image_upload_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'eEG1AfcB*e-12A1641be32*462-gB3dA',
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': '11400',
     }
 }
 
