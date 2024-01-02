@@ -6,6 +6,7 @@
 #
 asgiref==3.7.2
     # via django
+dj-database-url==2.1.0
 django==4.0.4
     # via -r requirements.in
 keras==2.8.0
@@ -20,6 +21,9 @@ opencv-contrib-python==4.5.5.64
     # via -r requirements.in
 opencv-python==4.5.5.64
     # via -r requirements.in
+
+psycopg2-binary==2.9.7
+python-decouple==3.8
 pillow==10.2.0
     # via -r requirements.in
 scipy==1.8.0
