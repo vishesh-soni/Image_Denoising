@@ -17,8 +17,6 @@ numpy==1.23.5
     #   opencv-contrib-python
     #   opencv-python
     #   scipy
-opencv-contrib-python==4.5.5.64
-    # via -r requirements.in
 opencv-python==4.5.5.64
     # via -r requirements.in
 
